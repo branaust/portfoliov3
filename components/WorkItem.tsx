@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 import React from "react";
 import { Text } from "./Themed";
 import { Link } from "expo-router";
@@ -16,7 +16,7 @@ const WorkItem = ({ heading, caption }: Props) => {
       }}
     >
       <View>
-        <Text style={styles.caption}>{caption}</Text>
+        <Text>{caption}</Text>
         <Text style={styles.heading}>{heading}</Text>
       </View>
     </Link>
@@ -24,9 +24,8 @@ const WorkItem = ({ heading, caption }: Props) => {
 };
 
 const styles = StyleSheet.create({
-  caption: {},
   heading: {
-    fontSize: 80,
+    fontSize: Platform.OS === "web" ? 80 : 60,
   },
 });
 

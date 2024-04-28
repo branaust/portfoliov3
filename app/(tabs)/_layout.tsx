@@ -13,6 +13,7 @@ const TabsStack = () => {
         tabBarStyle: {
           display: Platform.OS === "web" ? "none" : "flex",
           backgroundColor: Colors.light.background,
+          tabBarActiveTintColor: "#f22"
         },
         tabBarShowLabel: false,
         headerStyle: { backgroundColor: Colors.light.background },
@@ -22,8 +23,7 @@ const TabsStack = () => {
         name="index"
         options={{
           header: Platform.OS === "web" ? CustomHeader : undefined,
-
-          title: "Home",
+          title: "✌️ Yo",
           tabBarIcon: ({ color }: { color: string }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
@@ -33,7 +33,7 @@ const TabsStack = () => {
         name="work-history"
         options={{
           headerShown: false,
-          title: "Work",
+          title: "🛠️ Work",
           tabBarIcon: ({ color }: { color: string }) => (
             <MaterialIcons size={28} name="work-history" color={color} />
           ),
@@ -43,7 +43,7 @@ const TabsStack = () => {
         name="info"
         options={{
           header: Platform.OS === "web" ? CustomHeader : undefined,
-          title: "Info",
+          title: "👋",
           tabBarIcon: ({ color }: { color: string }) => (
             <FontAwesome5 name="info-circle" size={24} color={color} />
           ),

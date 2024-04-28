@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet } from "react-native";
+import { Platform, ScrollView, StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
 import { Image } from "expo-image";
@@ -7,8 +7,8 @@ import Separator from "@/components/Seperator";
 
 const InfoScreen = () => {
   return (
-    <ScrollView>
-      <View style={styles.innerContentWrap}>
+    <View style={{ flex: 1 }}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <Image
           style={styles.selfie}
           source={require("../../assets/images/selfie.jpeg")}
@@ -31,15 +31,19 @@ const InfoScreen = () => {
           related to fitness.
         </Text>
         <Separator />
-        <Text style={styles.snackDescription}>
-          this portfolio was designed and built by myself with react native.
-          review the code and preview the site as a native app below:
-        </Text>
-        <Image
-          contentFit="contain"
-          style={{ height: 500, width: 600 }}
-          source={require("../../assets/images/dummySnack.png")}
-        />
+        {Platform.OS === "web" && (
+          <>
+            <Text style={styles.snackDescription}>
+              this portfolio was designed and built by myself with react native.
+              review the code and preview the site as a native app below:
+            </Text>
+            <Image
+              contentFit="contain"
+              style={{ height: 500, width: 600 }}
+              source={require("../../assets/images/dummySnack.png")}
+            />
+          </>
+        )}
         <View style={styles.contactWrapper}>
           <Text style={styles.contactHeading}>contact</Text>
           <Link href="mailto: b.austin7007@gmail.com">
@@ -49,8 +53,8 @@ const InfoScreen = () => {
             <Text style={styles.contactText}>twitter</Text>
           </Link>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 
@@ -60,8 +64,9 @@ const styles = StyleSheet.create({
     width: 250,
     borderRadius: 250,
   },
-  innerContentWrap: {
-    paddingVertical: 120,
+  scrollViewContent: {
+    alignItems: Platform.OS === "web" ? "flex-start" : "center",
+    paddingVertical: Platform.OS === "web" ? 120 : 40,
     paddingHorizontal: 24,
     gap: 30,
   },

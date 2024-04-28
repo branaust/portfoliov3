@@ -15,22 +15,24 @@ const workHistory: { caption: string; heading: string }[] = [
 
 const WorkHistoryScreen = () => {
   return (
-    <ScrollView>
-      <View style={styles.innerContentWrap}>
-        {workHistory.map((item, idx) => (
-          <View key={idx}>
-            <WorkItem caption={item.caption} heading={item.heading} />
-            {idx < workHistory.length - 1 && <Separator />}
-          </View>
-        ))}
-      </View>
-    </ScrollView>
+    <View style={{ flex: 1 }}>
+      <ScrollView>
+        <View style={styles.innerContentWrap}>
+          {workHistory.map((item, idx) => (
+            <View key={idx}>
+              <WorkItem caption={item.caption} heading={item.heading} />
+              {idx < workHistory.length - 1 && <Separator />}
+            </View>
+          ))}
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   innerContentWrap: {
-    paddingVertical: 120,
+    paddingVertical: Platform.OS === "web" ? 120 : 40,
     paddingHorizontal: 24,
   },
   title: {

@@ -12,7 +12,7 @@ const WorkHistoryStack = () => {
         headerStyle: { backgroundColor: Colors.light.background },
       }}
     >
-      <Stack.Screen options={{ title: "Work" }} name="index" />
+      <Stack.Screen options={{ title: "🛠️ Work" }} name="index" />
       <Stack.Screen name="[id]" />
     </Stack>
   );
