@@ -1,27 +1,10 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
+import { FontAwesome } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Stack } from "expo-router/stack";
+import React, { useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
 
-import { useColorScheme } from "@/components/useColorScheme";
-import { View } from "@/components/Themed";
-import CustomHeader from "@/components/CustomHeader";
-
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: "(tabs)",
-};
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
-
-export default function RootLayout() {
+export default function AppLayout() {
   const [loaded, error] = useFonts({
     Urbanist: require("../assets/fonts/Urbanist-VariableFont_wght.ttf"),
     ...FontAwesome.font,
@@ -45,30 +28,10 @@ export default function RootLayout() {
   return <RootLayoutNav />;
 }
 
-function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-
+const RootLayoutNav = () => {
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen
-          name="index"
-          options={{
-            header: CustomHeader,
-          }}
-        />
-        <Stack.Screen
-          name="info"
-          options={{
-            header: CustomHeader,
-          }}
-        />
-        {/* Modal on mobile, should be dynamic route */}
-        <Stack.Screen
-          name="work-history"
-          options={{ headerShown: false }}
-        />
-      </Stack>
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
   );
-}
+};

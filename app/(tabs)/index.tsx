@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, useWindowDimensions } from "react-native";
 
 import { Text, View } from "@/components/Themed";
 import Model from "@/components/Scene/Model";
-import Scene from "../components/Scene";
+import Scene from "../../components/Scene";
 
 const Home = () => {
   const { width } = useWindowDimensions();

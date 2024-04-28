@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet } from "react-native";
 import { Text, View } from "@/components/Themed";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
+import Separator from "@/components/Seperator";
 
 const InfoScreen = () => {
   return (
@@ -10,7 +11,7 @@ const InfoScreen = () => {
       <View style={styles.innerContentWrap}>
         <Image
           style={styles.selfie}
-          source={require("../assets/images/selfie.jpeg")}
+          source={require("../../assets/images/selfie.jpeg")}
         />
         <Text style={styles.infoChunk}>
           brandon austin is a software engineer and designer currently focused
@@ -29,17 +30,16 @@ const InfoScreen = () => {
           design techniques, creative writing, music, photography and anything
           related to fitness.
         </Text>
-        <View style={styles.snack}>
-          <Text style={styles.snackDescription}>
-            this portfolio was designed and built by myself with react native.
-            review the code and preview the site as a native app below:
-          </Text>
-          <Image
-            contentFit="contain"
-            style={{ height: 500, width: 600 }}
-            source={require("../assets/images/dummySnack.png")}
-          />
-        </View>
+        <Separator />
+        <Text style={styles.snackDescription}>
+          this portfolio was designed and built by myself with react native.
+          review the code and preview the site as a native app below:
+        </Text>
+        <Image
+          contentFit="contain"
+          style={{ height: 500, width: 600 }}
+          source={require("../../assets/images/dummySnack.png")}
+        />
         <View style={styles.contactWrapper}>
           <Text style={styles.contactHeading}>contact</Text>
           <Link href="mailto: b.austin7007@gmail.com">
@@ -62,18 +62,15 @@ const styles = StyleSheet.create({
   },
   innerContentWrap: {
     paddingVertical: 120,
-    alignItems: "center",
-    justifyContent: "center",
     paddingHorizontal: 24,
-    gap: 50,
+    gap: 30,
   },
   infoChunk: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: "400",
     maxWidth: 800,
   },
   snack: {
-    alignItems: "center",
     paddingTop: 50,
   },
   snackDescription: {

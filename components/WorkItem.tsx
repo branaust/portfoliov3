@@ -13,7 +13,6 @@ const WorkItem = ({ heading, caption }: Props) => {
     <Link
       href={{
         pathname: `/work-history/${heading}`,
-        params: { id: heading },
       }}
     >
       <View>
