@@ -12,7 +12,7 @@ const CustomHeader = () => {
       {/* <Text style={styles.headerText} /> */}
       {/* This will nav to /index and scroll down to work-history screen*/}
       <View style={styles.rightWrap}>
-        <Link href="/work-history">
+        <Link href="/work-history/">
           <Text>Work</Text>
         </Link>
         <Text>·</Text>

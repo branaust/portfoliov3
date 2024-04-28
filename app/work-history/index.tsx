@@ -28,12 +28,10 @@ const WorkHistoryScreen = () => {
 };
 
 const styles = StyleSheet.create({
-
   innerContentWrap: {
     paddingVertical: 120,
     paddingHorizontal: 24,
   },
-
   title: {
     fontSize: 20,
     fontWeight: "bold",

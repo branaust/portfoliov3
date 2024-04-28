@@ -66,7 +66,7 @@ function RootLayoutNav() {
         {/* Modal on mobile, should be dynamic route */}
         <Stack.Screen
           name="work-history"
-          options={{ presentation: "modal", header: CustomHeader }}
+          options={{ headerShown: false }}
         />
       </Stack>
     </ThemeProvider>
