@@ -6,14 +6,20 @@ import { Link } from "expo-router";
 const CustomHeader = () => {
   return (
     <View style={styles.container}>
-      <View />
+      <Link href="/">
+        <Text>Brandon Austin</Text>
+      </Link>
+      {/* <Text style={styles.headerText} /> */}
       {/* This will nav to /index and scroll down to work-history screen*/}
-      <Link href="/work-history">
-        <Text style={styles.headerText}>work</Text>
-      </Link>
-      <Link href="/info">
-        <Text style={styles.headerText}>info</Text>
-      </Link>
+      <View style={styles.rightWrap}>
+        <Link href="/work-history">
+          <Text>Work</Text>
+        </Link>
+        <Text>·</Text>
+        <Link href="/info">
+          <Text>Info</Text>
+        </Link>
+      </View>
     </View>
   );
 };
@@ -32,6 +38,11 @@ const styles = StyleSheet.create({
   headerText: {
     fontWeight: "500",
     fontSize: 16,
+    width: 30,
+  },
+  rightWrap: {
+    flexDirection: "row",
+    gap: 8,
   },
 });
 

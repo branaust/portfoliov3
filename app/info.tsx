@@ -2,21 +2,22 @@ import { ScrollView, StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 
 const InfoScreen = () => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.infoContainer}>
+    <ScrollView>
+      <View style={styles.innerContentWrap}>
         <Image
           style={styles.selfie}
           source={require("../assets/images/selfie.jpeg")}
         />
         <Text style={styles.infoChunk}>
-          brandon austin is a software engineer currently focused in the mobile
-          application space and has previously worked for lark, ntwrk and seql.
-          with over 7 years of experience creating world-class digital products,
-          his work is a blend of several disciplines—product design, ux design
-          and writing software.
+          brandon austin is a software engineer and designer currently focused
+          in the mobile application space and has previously worked for lark,
+          ntwrk and seql. with over 7 years of experience creating world-class
+          digital products, his work is a blend of several disciplines—product
+          design, ux design and writing software.
         </Text>
         <Text style={styles.infoChunk}>
           he enjoys leading and building teams and establishing new processes,
@@ -30,7 +31,7 @@ const InfoScreen = () => {
         </Text>
         <View style={styles.snack}>
           <Text style={styles.snackDescription}>
-            this portfolio was designed by myself and built with react native.
+            this portfolio was designed and built by myself with react native.
             review the code and preview the site as a native app below:
           </Text>
           <Image
@@ -39,20 +40,28 @@ const InfoScreen = () => {
             source={require("../assets/images/dummySnack.png")}
           />
         </View>
+        <View style={styles.contactWrapper}>
+          <Text style={styles.contactHeading}>contact</Text>
+          <Link href="mailto: b.austin7007@gmail.com">
+            <Text style={styles.contactText}>email</Text>
+          </Link>
+          <Link href="http://x.com/bran_aust">
+            <Text style={styles.contactText}>twitter</Text>
+          </Link>
+        </View>
       </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {},
   selfie: {
     height: 250,
     width: 250,
     borderRadius: 250,
   },
-  infoContainer: {
-    paddingTop: 120,
+  innerContentWrap: {
+    paddingVertical: 120,
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 24,
@@ -64,12 +73,24 @@ const styles = StyleSheet.create({
     maxWidth: 800,
   },
   snack: {
-    alignItems:"center",
+    alignItems: "center",
     paddingTop: 50,
   },
   snackDescription: {
     fontSize: 16,
-    maxWidth: 800,
+    maxWidth: 600,
+    paddingBottom: 16,
+  },
+  contactWrapper: {
+    gap: 8,
+  },
+  contactHeading: {
+    fontSize: 24,
+    fontWeight: "600",
+  },
+  contactText: {
+    fontSize: 24,
+    fontWeight: "400",
   },
 });
 

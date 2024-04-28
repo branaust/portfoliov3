@@ -1,29 +1,29 @@
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, useWindowDimensions } from "react-native";
 
 import { Text, View } from "@/components/Themed";
+import Model from "@/components/Scene/Model";
+import Scene from "../components/Scene";
 
 const Home = () => {
+  const { width } = useWindowDimensions();
   return (
-    <ScrollView contentContainerStyle={{ flex: 1 }}>
+    <View style={{ flex: 1}}>
       {/* TOP LEVEL HERO */}
-      <View style={styles.heroContainer}>
-        <Text style={styles.title}>brandon austin</Text>
-        <Text style={styles.subtitle}>developer · designer</Text>
-      </View>
-      {/* WORK HISTORY */}
-      <View style={styles.workHistoryContainer}>
-        <Text style={styles.title}>brandon austin</Text>
-        <Text style={styles.subtitle}>developer · designer</Text>
-      </View>
-    </ScrollView>
+        {/* <Scene /> */}
+        {/* <View style={styles.heroContainer}>
+          <Text style={styles.title}>brandon austin</Text>
+          <Text style={styles.subtitle}>developer · designer</Text>
+        </View> */}
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   heroContainer: {
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor:"transparent"
   },
   workHistoryContainer: {
     height: "100%",
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home
+export default Home;

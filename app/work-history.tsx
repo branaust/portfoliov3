@@ -1,35 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Platform, ScrollView, StyleSheet } from "react-native";
 
-import { Text, View } from '@/components/Themed';
+import { Text, View } from "@/components/Themed";
+import WorkItem from "@/components/WorkItem";
+
+const workHistory: { caption: string; heading: string }[] = [
+  { caption: "Lark", heading: "FoodGPT" },
+  { caption: "Lark", heading: "Brand Redesign" },
+  { caption: "NTWRK", heading: "Live Auctions" },
+  { caption: "NTWRK", heading: "Shopping Experience" },
+  { caption: "SEQL", heading: "The Athlete App" },
+];
 
 const WorkHistoryScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-    </View>
+    <ScrollView>
+      <View style={styles.innerContentWrap}>
+        {workHistory.map((item, idx) => (
+          <View key={idx}>
+            <WorkItem caption={item.caption} heading={item.heading} />
+            {idx < workHistory.length - 1 && <View style={styles.separator} />}
+          </View>
+        ))}
+      </View>
+    </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+
+  innerContentWrap: {
+    paddingVertical: 120,
+    paddingHorizontal: 24,
   },
+
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: "80%",
+    backgroundColor: "#000",
   },
 });
 
-export default WorkHistoryScreen
+export default WorkHistoryScreen;
