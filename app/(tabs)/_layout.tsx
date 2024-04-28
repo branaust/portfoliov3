@@ -23,7 +23,7 @@ const TabsStack = () => {
         name="index"
         options={{
           header: Platform.OS === "web" ? CustomHeader : undefined,
-          title: "✌️ Yo",
+          title: "Yo",
           tabBarIcon: ({ color }: { color: string }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
@@ -33,7 +33,7 @@ const TabsStack = () => {
         name="work-history"
         options={{
           headerShown: false,
-          title: "🛠️ Work",
+          title: "Work",
           tabBarIcon: ({ color }: { color: string }) => (
             <MaterialIcons size={28} name="work-history" color={color} />
           ),
