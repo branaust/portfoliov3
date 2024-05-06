@@ -11,7 +11,7 @@ const Home = () => {
       {/* <Scene /> */}
       <Canvas>
         <Suspense fallback={null}>
-          <Model />
+          {/* <Model /> */}
         </Suspense>
       </Canvas>
     </View>
