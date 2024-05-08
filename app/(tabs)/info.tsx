@@ -4,6 +4,7 @@ import { Text, View } from "@/components/Themed";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
 import Separator from "@/components/Seperator";
+import XSvg from "@/assets/images/XSvg";
 
 const InfoScreen = () => {
   return (
@@ -31,26 +32,26 @@ const InfoScreen = () => {
           related to fitness.
         </Text>
         <Separator />
-        {Platform.OS === "web" && (
+        {/* {Platform.OS === "web" && ( */}
           <>
             <Text style={styles.snackDescription}>
-              this portfolio was designed and built by myself with react native.
-              review the code and preview the site as a native app below:
+              Link to portfolio repo: &nbsp;
+              <Link style={styles.repoLink} href="https://github.com/branaust/portfoliov3">https://github.com/branaust/portfoliov3</Link>
             </Text>
-            <Image
+            {/* <Image
               contentFit="contain"
               style={{ height: 500, width: 600 }}
               source={require("../../assets/images/dummySnack.png")}
-            />
+            /> */}
           </>
-        )}
+        {/* )} */}
         <View style={styles.contactWrapper}>
-          <Text style={styles.contactHeading}>contact</Text>
           <Link href="mailto: b.austin7007@gmail.com">
             <Text style={styles.contactText}>email</Text>
           </Link>
+          <Text style={styles.contactText}>·</Text>
           <Link href="http://x.com/bran_aust">
-            <Text style={styles.contactText}>twitter</Text>
+            <XSvg/>
           </Link>
         </View>
       </ScrollView>
@@ -85,15 +86,18 @@ const styles = StyleSheet.create({
   },
   contactWrapper: {
     gap: 8,
+    flexDirection:"row",
+    alignItems: "center"
   },
-  contactHeading: {
-    fontSize: 24,
-    fontWeight: "600",
+  repoLink: {
+    color: "orange",
+    fontWeight: "700"
   },
   contactText: {
     fontSize: 24,
-    fontWeight: "400",
+    fontWeight: "600",
   },
+
 });
 
 export default InfoScreen;

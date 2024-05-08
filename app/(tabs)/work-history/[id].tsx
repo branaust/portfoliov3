@@ -17,6 +17,8 @@ const WorkHistoryDetailsScreen = (props: Props) => {
   return (
     <View style={styles.container}>
       <Text>{id}</Text>
+      <Text style={{fontSize: 45, fontWeight: "500", paddingBottom: 30}}>This page is currently under maintenance</Text>
+      <iframe src="https://giphy.com/embed/HOsHtiVdeypFxOhLAf" width="480" height="270" frameBorder="0" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/gaming-super-mario-bros-brothers-HOsHtiVdeypFxOhLAf"></a></p>
     </View>
   );
 };

@@ -9,8 +9,6 @@ const CustomHeader = () => {
       <Link href="/">
         <Text>Brandon Austin</Text>
       </Link>
-      {/* <Text style={styles.headerText} /> */}
-      {/* This will nav to /index and scroll down to work-history screen*/}
       <View style={styles.rightWrap}>
         <Link href="/work-history/">
           <Text>Work</Text>
