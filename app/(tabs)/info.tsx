@@ -15,19 +15,18 @@ const InfoScreen = () => {
           source={require("../../assets/images/selfie.jpeg")}
         />
         <Text style={styles.infoChunk}>
-          brandon austin is a software engineer and designer currently focused
-          in the mobile application space and has previously worked for lark,
-          ntwrk and seql. with over 7 years of experience creating world-class
-          digital products, his work is a blend of several disciplines—product
+          👋 hey! i'm brandon austin. i'm a software engineer and designer currently focused
+          in the mobile application space. with over 7 years of experience creating world-class
+          digital products, my work is a blend of several disciplines—product
           design, ux design and writing software.
         </Text>
         <Text style={styles.infoChunk}>
-          he enjoys leading and building teams and establishing new processes,
+          i enjoy leading and building teams and establishing new processes,
           having brought life changing features to the hands of hundreds of
-          thousands of users throughout the course of his career.
+          thousands of users throughout the course of my career.
         </Text>
         <Text style={styles.infoChunk}>
-          he is inspired by his peers and colleagues, emerging technology and
+          i'm inspired by my peers and colleagues, emerging technology and
           design techniques, creative writing, music, photography and anything
           related to fitness.
         </Text>

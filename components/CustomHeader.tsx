@@ -7,15 +7,15 @@ const CustomHeader = () => {
   return (
     <View style={styles.container}>
       <Link href="/">
-        <Text>Brandon Austin</Text>
+        <Text style={styles.headerText}>Brandon Austin</Text>
       </Link>
       <View style={styles.rightWrap}>
         <Link href="/work-history/">
-          <Text>Work</Text>
+          <Text style={styles.headerText}>Work</Text>
         </Link>
         <Text>·</Text>
         <Link href="/info">
-          <Text>Info</Text>
+          <Text style={styles.headerText}>Info</Text>
         </Link>
       </View>
     </View>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   headerText: {
-    fontWeight: "500",
+    fontWeight: "600",
     fontSize: 16,
     width: 30,
   },
