@@ -8,13 +8,11 @@ const Model = () => {
   const { nodes, materials } = useGLTF("../assets/torrus.glb");
   const { width } = useWindowDimensions();
 
-  console.log({width})
-
   useFrame(() => {
     mesh.current.rotation.x += 0.02;
   });
   return (
-    <group scale={width > 1400 ? width/400 : width / 300}>
+    <group scale={width > 1400 ? width / 400 : width / 300}>
       <mesh
         ref={mesh}
         castShadow

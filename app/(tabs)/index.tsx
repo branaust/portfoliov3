@@ -10,7 +10,7 @@ const Home = () => {
     <View style={{ flex: 1 }}>
       <Scene />
       <Link href="https://branaust.substack.com/?utm_source=discover_search" style={styles.newsletterText}>
-        Newsletter
+        <Text>Newsletter</Text>
       </Link>
     </View>
   );
