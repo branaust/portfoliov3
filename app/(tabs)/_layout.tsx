@@ -49,6 +49,16 @@ const TabsStack = () => {
           ),
         }}
       />
+        <Tabs.Screen
+        name="playspot-privacy-policy"
+        options={{
+          header: Platform.OS === "web" ? CustomHeader : undefined,
+          title: "👋",
+          tabBarIcon: ({ color }: { color: string }) => (
+            <FontAwesome5 name="info-circle" size={24} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 };

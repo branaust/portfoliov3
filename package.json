@@ -17,7 +17,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-three/drei": "^9.105.4",
     "@react-three/fiber": "^8.16.2",
-    "expo": "^50.0.0",
+    "expo": "^52.0.0",
     "expo-font": "~11.10.3",
     "expo-gl": "~13.6.0",
     "expo-image": "~1.10.6",
@@ -36,6 +36,7 @@
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0",
     "react-native-web": "~0.19.6",
+    "react-native-webview": "13.12.2",
     "three": "^0.164.1"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@ const Scene = (props: Props) => {
     <Canvas style={{ backgroundColor: "transparent" }}>
       <directionalLight intensity={3} position={[0, 3, 2]} />
       <Environment preset="city" />
-      <Model />
+      {/* <Model /> */}
     </Canvas>
   );
 };
